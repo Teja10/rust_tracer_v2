@@ -19,7 +19,7 @@ pub trait Vec3Traits {
 
     fn length(&self) -> f64;
     fn length_squared(&self) -> f64;
-    fn dot(&self, other: &Vec3) -> f64;
+    fn dot(&self, other: Vec3) -> f64;
     fn cross(&self, other: &Vec3) -> Vec3;
     fn unit_vector(&self) -> Vec3;
 }
@@ -50,8 +50,8 @@ impl Vec3Traits for Vec3 {
         self.x * self.x + self.y * self.y + self.z * self.z
     }
 
-    fn dot(&self, other: &Vec3) -> f64 {
-        self.x * other.x + self.y * other.y + self.z * other.z
+    fn dot(&self, other: Vec3) -> f64 {
+        self.x * other.x() + self.y * other.y() + self.z * other.z()
     }
 
     fn cross(&self, other: &Vec3) -> Vec3 {
