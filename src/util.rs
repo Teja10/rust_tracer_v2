@@ -1,5 +1,8 @@
 use crate::types::vec3::*;
 
+fn d2r(degrees: f64) -> f64 {
+    degrees * std::f64::consts::PI / 180.0
+}
 
 // function takes in a 2d array as input
 pub fn write_image(image: &Vec<Vec<Color>>) {
